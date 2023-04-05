@@ -19,8 +19,9 @@ public class EditLead {
 		cd.findElement(By.linkText("CRM/SFA")).click();
 		cd.findElement(By.linkText("Leads")).click();
 		cd.findElement(By.linkText("Find Leads")).click();
-		cd.findElement(By.xpath("//input[@id='ext-gen248']")).sendKeys("Padmavathi Jahnavi");
-		cd.findElement(By.xpath("//button[@id='ext-gen334']")).click();
+		//cd.findElement(By.xpath("//input[@id='ext-gen248']")).sendKeys("Padmavathi Jahnavi");
+		cd.findElement(By.xpath("(//input[@name='firstName'])[3]")).sendKeys("Padmavathi Jahnavi"); 
+		cd.findElement(By.xpath("//button[text()='Find Leads']")).click();
 		cd.findElement(By.xpath("(//div[@class='x-grid3-cell-inner x-grid3-col-partyId']/a)[1]")).click();
 		Thread.sleep(2000);
 			String title = cd.findElement(By.id("sectionHeaderTitle_leads")).getText();
