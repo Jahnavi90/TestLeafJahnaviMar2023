@@ -4,29 +4,33 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 public class BookMyShow {
 
 	public static void main(String[] args) throws InterruptedException {
-		ChromeDriver ed = new ChromeDriver();
+		EdgeOptions edgeOptions = new EdgeOptions();
+		edgeOptions.addArguments("--disable-notifications");
+		EdgeDriver ed = new EdgeDriver(edgeOptions);
 		ed.manage().window().maximize();
 		ed.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		ed.get("https://in.bookmyshow.com/");
 		Thread.sleep(3000);
-		ed.findElement(By.xpath("//span[text()='Chennai']")).click();
+		ed.findElement(By.xpath("//span[text()='Hyderabad']")).click();
 		Thread.sleep(3000);
 		String URL = ed.getCurrentUrl();
-			if (URL.equals("https://in.bookmyshow.com/explore/home/chennai")) {
+			if (URL.equals("https://in.bookmyshow.com/explore/home/hyderabad")) {
 				System.out.println("On the right page");
 			}else {
 				System.out.println("The page hasn't loaded yet");
 					}
 		Thread.sleep(3000);
 		//ed.findElement(By.xpath("//div[text()='Refresh']")).click();
-		ed.findElement(By.xpath("(//*[name()='svg' and @xmlns='http://www.w3.org/2000/svg']//*[local-name()='path'])[2]")).click();
+		//ed.findElement(By.xpath("(//*[name()='svg' and @xmlns='http://www.w3.org/2000/svg']//*[local-name()='path'])[2]")).click();
 		Thread.sleep(3000);
-		ed.findElement(By.id("search-input")).sendKeys("Shaakuntalam");
+		ed.findElement(By.xpath("//span[@class='sc-fcdeBU cNeUMt']")).sendKeys("Shaakuntalam");
 		Thread.sleep(3000);
-		ed.findElement(By.linkText("Shaakuntalam")).click();
+		ed.findElement(By.xpath("//strong[text()='Shaakuntalam']")).click();
 		Thread.sleep(3000);
 		ed.findElement(By.xpath("(//span[text()='Book tickets'])[1]")).click();
 		Thread.sleep(3000);
