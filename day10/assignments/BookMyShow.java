@@ -3,7 +3,6 @@ package day10.assignments;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 public class BookMyShow {
