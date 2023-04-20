@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="Test" verbose = "5">
+    <classes>
+      <class name="day14.assignments.TestNG_SalesForce_AdminCerts"/>
+      <class name="day14.assignments.TestNG_SalesForce_AchitectCerts"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
