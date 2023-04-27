@@ -3,6 +3,7 @@ Feature: Login to LeafTaps Application for Creating Lead with multiple data
 #Background: 
 #Given Launch the Browser, add implicit wait, load the URL, maximize the screen.
 
+@Positive
 Scenario Outline:
 And Enter the username as 'DemoCsr'
 And Enter the password as 'crmsfa'
@@ -22,6 +23,7 @@ Examples:
 |Infosys|Akhila|Kora|9087655676|
 |TCS|Sumathi|Deva|9087342134|
 
+@Negative
 Scenario Outline:
 And Enter the username as 'DemoCsr'
 And Enter the password as 'crmsfa'
